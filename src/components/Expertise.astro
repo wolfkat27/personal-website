@@ -1,0 +1,136 @@
+---
+---
+
+<section id="expertise">
+  <div class="section-header">
+    <span class="section-label">02</span>
+    <h2 class="section-title">Core expertise</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <div class="expertise-tag">Safety analysis</div>
+      <h3>SOTIF &amp; STPA</h3>
+      <p>Applying STAMP-based hazard analysis to autonomous and ML-driven systems. Authoring FMEAs, conducting STPA, and writing SOTIF documentation that actually drives design decisions — not just compliance checkboxes.</p>
+      <div class="expertise-tags">
+        <span class="tag">STPA</span>
+        <span class="tag">SOTIF</span>
+        <span class="tag">FMEA</span>
+        <span class="tag">ISO 26262</span>
+        <span class="tag">Threat modeling</span>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-tag">Verification &amp; validation</div>
+      <h3>ML system V&amp;V</h3>
+      <p>Designing verification and validation programs for ML-driven autonomous capabilities — bounding scenario definition, structured track and fleet test design, statistical test planning, and sim-to-real gap analysis.</p>
+      <div class="expertise-tags">
+        <span class="tag">V&amp;V plan design</span>
+        <span class="tag">Track testing</span>
+        <span class="tag">Fleet testing</span>
+        <span class="tag">Sim analysis</span>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-tag">Systems architecture</div>
+      <h3>Feature &amp; functional architecture</h3>
+      <p>Authoring concept of operations, defining system I/Os, writing feature and functional requirements, and designing verification plans for perception and autonomy features across the full development lifecycle.</p>
+      <div class="expertise-tags">
+        <span class="tag">ConOps</span>
+        <span class="tag">SysML</span>
+        <span class="tag">Requirements</span>
+        <span class="tag">Functional arch</span>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-tag">Domain</div>
+      <h3>Autonomous vehicles &amp; robotics</h3>
+      <p>A decade of embedded experience across Ford, Cruise, and Latitude AI — from powertrain calibration to L4 robotaxi safety cases to perception system architecture for ADAS features on production vehicles.</p>
+      <div class="expertise-tags">
+        <span class="tag">L4 AV</span>
+        <span class="tag">ADAS</span>
+        <span class="tag">Perception</span>
+        <span class="tag">Embedded ML</span>
+        <span class="tag">Robotics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ─── EXPERTISE SECTION ─── */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .expertise-card {
+    background: var(--bg);
+    padding: 32px;
+    transition: background 0.2s;
+  }
+
+  .expertise-card:hover {
+    background: var(--bg2);
+  }
+
+  .expertise-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .expertise-tag::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .expertise-card h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .expertise-card p {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  .expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 20px;
+  }
+
+  .tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--border-mid);
+    color: var(--text3);
+    border-radius: 2px;
+  }
+</style>

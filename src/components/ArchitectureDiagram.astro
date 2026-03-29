@@ -1,0 +1,377 @@
+---
+---
+
+<section id="architecture">
+  <div class="section-header">
+    <span class="section-label">01</span>
+    <h2 class="section-title">Career system architecture</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="diagram-container">
+    <div class="diag-legend">
+      <div class="diag-legend-item"><div class="diag-dot" style="background:#7F77DD"></div> Education</div>
+      <div class="diag-legend-item"><div class="diag-dot" style="background:#1D9E75"></div> Role / employer</div>
+      <div class="diag-legend-item"><div class="diag-dot" style="background:#3B8BD4"></div> Skills acquired</div>
+      <div class="diag-legend-item"><div class="diag-dot" style="background:#BA7517"></div> Outputs</div>
+      <div class="diag-legend-item"><div class="diag-dot" style="background:#D85A30"></div> Foundation</div>
+    </div>
+
+    <svg class="diag-svg" viewBox="0 0 800 2100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <style>
+        .edu-rect { fill: #1c1a2e; stroke: #9d8fd9; stroke-width: 1.5; }
+        .edu-title { fill: #e8d5f2; font-weight: 600; }
+        .edu-sub { fill: #b8a5d1; }
+        .job-rect { fill: #0e201a; stroke: #4db88b; stroke-width: 1.5; }
+        .job-title { fill: #7ee9c8; font-weight: 600; }
+        .job-sub { fill: #5dd5a8; }
+        .skill-rect { fill: #0d1a28; stroke: #6bb5e8; stroke-width: 1.5; }
+        .skill-title { fill: #9ccfff; font-weight: 600; }
+        .skill-sub { fill: #7dbfff; }
+        .out-rect { fill: #1e1608; stroke: #d9a25e; stroke-width: 1.5; }
+        .out-title { fill: #ffb84d; font-weight: 600; }
+        .out-item { fill: #e8a856; }
+        .fdn-rect { fill: #1e1008; stroke: #e89860; stroke-width: 1.5; }
+        .fdn-title { fill: #ffc999; font-weight: 600; }
+        .fdn-sub { fill: #ffb875; }
+        .proc-rect { fill: none; stroke: #2a2d2b; stroke-dasharray: 4 3; stroke-width: 1; }
+        .proc-text { fill: #7a8077; }
+        .rule-line { stroke: #2a2d2b; }
+        .rule-text { fill: #5c5b57; }
+        .arr-gray { stroke: #3d3f3c; }
+        .arr-blue { stroke: #6bb5e8; }
+        .arr-amber { stroke: #d9a25e; }
+        .arr-green { stroke: #4db88b; }
+        .arr-purple { stroke: #9d8fd9; }
+        .hdr-text { fill: #d4d2cb; font-weight: 500; }
+        .hdr-sub { fill: #b8b6af; }
+        .footer-text { fill: #b8b6af; }
+        .rule-text { fill: #a5a3a0; }
+      </style>
+
+      <text x="400" y="28" text-anchor="middle" font-size="11" class="hdr-text" letter-spacing="0.15em">KATELYN WOLFENBERGER :: CAREER SYSTEM ARCHITECTURE</text>
+      <text x="400" y="43" text-anchor="middle" font-size="9" class="hdr-sub" letter-spacing="0.1em">rev. 2025.1  ·  safety-critical cyber-physical systems  ·  ~10yr runtime</text>
+
+      <text x="20" y="72" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">INIT SEQUENCE</text>
+      <line x1="20" y1="76" x2="780" y2="76" class="rule-line" stroke-width="0.5"/>
+
+      <g class="dnode" onclick="window.open('https://web.mit.edu','_blank')" style="cursor: pointer;">
+        <rect x="240" y="86" width="320" height="62" rx="4" class="edu-rect"/>
+        <text x="400" y="107" text-anchor="middle" font-size="12" class="edu-title">MIT · BSc Mechanical Engineering</text>
+        <text x="400" y="125" text-anchor="middle" font-size="9" class="edu-sub">2010 – 2015  ·  Cambridge, MA</text>
+      </g>
+
+      <g class="dnode">
+        <rect x="20" y="166" width="180" height="74" rx="4" class="fdn-rect"/>
+        <text x="110" y="188" text-anchor="middle" font-size="10" class="fdn-title">AUV Aluminum</text>
+        <text x="110" y="202" text-anchor="middle" font-size="10" class="fdn-title">Reactor</text>
+        <text x="110" y="218" text-anchor="middle" font-size="9" class="fdn-sub">MIT LL · ONR</text>
+        <text x="110" y="232" text-anchor="middle" font-size="9" class="fdn-sub">Lead eng., 30-person</text>
+      </g>
+
+      <g class="dnode">
+        <rect x="600" y="166" width="180" height="74" rx="4" class="fdn-rect"/>
+        <text x="690" y="188" text-anchor="middle" font-size="10" class="fdn-title">Tesla · Battery</text>
+        <text x="690" y="202" text-anchor="middle" font-size="10" class="fdn-title">Intern</text>
+        <text x="690" y="218" text-anchor="middle" font-size="9" class="fdn-sub">EV charge port V&amp;V</text>
+        <text x="690" y="232" text-anchor="middle" font-size="9" class="fdn-sub">Summer 2014</text>
+      </g>
+
+      <path d="M320 148 L110 166" fill="none" class="arr-gray" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M480 148 L690 166" fill="none" class="arr-gray" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="256" width="180" height="56" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="110" y="274" text-anchor="middle" font-size="9" class="skill-title">Team leadership</text>
+      <text x="110" y="288" text-anchor="middle" font-size="9" class="skill-sub">Rapid prototyping</text>
+      <path d="M110 240 L110 256" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="600" y="256" width="180" height="56" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="690" y="274" text-anchor="middle" font-size="9" class="skill-title">V&amp;V test program</text>
+      <text x="690" y="288" text-anchor="middle" font-size="9" class="skill-sub">Automotive dev</text>
+      <path d="M690 240 L690 256" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <text x="20" y="340" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">MODULE 1 · FORD MOTOR COMPANY  2015 – 2018  ·  Dearborn, MI</text>
+      <line x1="20" y1="344" x2="780" y2="344" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M110 312 L110 328 L220 328 L220 352" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M690 312 L690 332 L580 332 L580 352" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <g class="dnode">
+        <rect x="20" y="352" width="200" height="68" rx="4" class="job-rect"/>
+        <text x="120" y="373" text-anchor="middle" font-size="10" class="job-title">Powertrain</text>
+        <text x="120" y="387" text-anchor="middle" font-size="10" class="job-title">Calibration Eng</text>
+        <text x="120" y="402" text-anchor="middle" font-size="9" class="job-sub">3.5L engine · OBDII</text>
+      </g>
+
+      <g class="dnode">
+        <rect x="300" y="352" width="200" height="68" rx="4" class="job-rect"/>
+        <text x="400" y="373" text-anchor="middle" font-size="10" class="job-title">AV Systems</text>
+        <text x="400" y="387" text-anchor="middle" font-size="10" class="job-title">Engineer</text>
+        <text x="400" y="402" text-anchor="middle" font-size="9" class="job-sub">L4 occupancy · SysML</text>
+      </g>
+
+      <g class="dnode">
+        <rect x="580" y="352" width="200" height="68" rx="4" class="job-rect"/>
+        <text x="680" y="373" text-anchor="middle" font-size="10" class="job-title">AV Systems</text>
+        <text x="680" y="387" text-anchor="middle" font-size="10" class="job-title">Engineer</text>
+        <text x="680" y="402" text-anchor="middle" font-size="9" class="job-sub">Perception · TaaS</text>
+      </g>
+
+      <rect x="20" y="446" width="760" height="66" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="110" y="467" text-anchor="middle" font-size="9" class="skill-title">Req · FMEA · SysML · RTOS · ML-to-production · regulatory compliance · functional architecture · L4 integration</text>
+      <text x="400" y="486" text-anchor="middle" font-size="9" class="skill-sub">Ideal function analysis · embedded systems design</text>
+      <path d="M120 420 L120 446" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M400 420 L400 446" fill="none" class="arr-blue" stroke-width="0.8"/>
+      <path d="M680 420 L680 446" fill="none" class="arr-blue" stroke-width="0.8"/>
+
+      <rect x="20" y="528" width="240" height="100" rx="4" class="out-rect" stroke-width="1"/>
+      <text x="140" y="548" text-anchor="middle" font-size="9" class="out-title">Outputs ↗</text>
+      <text x="140" y="563" text-anchor="middle" font-size="8" class="out-item">Occupancy detection</text>
+      <text x="140" y="575" text-anchor="middle" font-size="8" class="out-item">TaaS product prototype</text>
+      <text x="140" y="587" text-anchor="middle" font-size="8" class="out-item">Emissions compliance</text>
+      <text x="140" y="599" text-anchor="middle" font-size="8" class="out-item">L4 requirements</text>
+      <text x="140" y="611" text-anchor="middle" font-size="8" class="out-item">Barbara P. James Award</text>
+
+      <text x="20" y="662" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">UPGRADE · U-MICHIGAN GRADUATE STUDIES IN ROBOTICS  2018 – 2020</text>
+      <line x1="20" y1="666" x2="780" y2="666" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M400 528 L400 640 L400 656" fill="none" class="arr-gray" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <g class="dnode">
+        <rect x="240" y="656" width="320" height="62" rx="4" class="edu-rect"/>
+        <text x="400" y="677" text-anchor="middle" font-size="12" class="edu-title">Univ. of Michigan · Robotics</text>
+        <text x="400" y="695" text-anchor="middle" font-size="9" class="edu-sub">Graduate studies  ·  Ann Arbor, MI</text>
+      </g>
+
+      <rect x="160" y="744" width="480" height="48" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="400" y="763" text-anchor="middle" font-size="9" class="skill-sub">Advanced robotics · autonomous systems · ML for embodied AI</text>
+      <path d="M400 718 L400 744" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <text x="20" y="826" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">MODULE 2 · CRUISE  OCT 2021 – JUN 2024  ·  San Francisco, CA</text>
+      <line x1="20" y1="830" x2="780" y2="830" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M400 792 L400 838" fill="none" class="arr-gray" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="838" width="180" height="62" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="110" y="858" text-anchor="middle" font-size="9" class="skill-title">Inputs carried in</text>
+      <text x="110" y="877" text-anchor="middle" font-size="9" class="skill-sub">Ford + robotics MS</text>
+
+      <g class="dnode">
+        <rect x="280" y="838" width="240" height="62" rx="4" class="job-rect"/>
+        <text x="400" y="858" text-anchor="middle" font-size="10" class="job-title">Senior Systems Engineer I/II</text>
+        <text x="400" y="877" text-anchor="middle" font-size="9" class="job-sub">L4 robotaxi · V&amp;V · safety case</text>
+      </g>
+
+      <g class="dnode">
+        <rect x="580" y="838" width="200" height="62" rx="4" class="skill-rect" stroke-width="1"/>
+        <text x="680" y="857" text-anchor="middle" font-size="9" class="skill-title">Processing loops:</text>
+        <text x="680" y="874" text-anchor="middle" font-size="8" class="skill-sub">Reqs → V&amp;V → fleet</text>
+      </g>
+
+      <path d="M200 869 L280 869" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M520 869 L580 869" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="926" width="760" height="75" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="400" y="950" text-anchor="middle" font-size="9" class="skill-title">SOTIF · STPA · FMEA at scale · safety case · behavioral reqs · sim + fleet analytics · statistics</text>
+      <text x="400" y="969" text-anchor="middle" font-size="9" class="skill-sub">Cross-functional alignment · requirements traceability · fleet V&amp;V</text>
+      <path d="M400 900 L400 926" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="1017" width="240" height="110" rx="4" class="out-rect" stroke-width="1"/>
+      <text x="140" y="1038" text-anchor="middle" font-size="9" class="out-title">Outputs ↗</text>
+      <text x="140" y="1053" text-anchor="middle" font-size="8" class="out-item">Daytime L4 fleet ops</text>
+      <text x="140" y="1065" text-anchor="middle" font-size="8" class="out-item">Safety case docs</text>
+      <text x="140" y="1077" text-anchor="middle" font-size="8" class="out-item">Behavioral requirements</text>
+      <text x="140" y="1089" text-anchor="middle" font-size="8" class="out-item">V&amp;V plans</text>
+      <text x="140" y="1101" text-anchor="middle" font-size="8" class="out-item">Multi-urban ops</text>
+      <text x="140" y="1113" text-anchor="middle" font-size="8" class="out-item">Failure mode analyses</text>
+
+      <text x="20" y="1163" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">MODULE 3 · LATITUDE AI  JUN 2024 – PRESENT  ·  Palo Alto, CA</text>
+      <line x1="20" y1="1167" x2="780" y2="1167" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M280 1001 L280 1020 L400 1020 L400 1175" fill="none" class="arr-gray" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="1175" width="180" height="62" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="110" y="1195" text-anchor="middle" font-size="9" class="skill-title">Full stack loaded</text>
+      <text x="110" y="1212" text-anchor="middle" font-size="9" class="skill-sub">Decade of AV depth</text>
+
+      <g class="dnode">
+        <rect x="280" y="1175" width="240" height="62" rx="4" class="job-rect"/>
+        <text x="400" y="1195" text-anchor="middle" font-size="10" class="job-title">Sr. Software Systems Eng</text>
+        <text x="400" y="1212" text-anchor="middle" font-size="9" class="job-sub">Perception · feature arch</text>
+      </g>
+
+      <g class="dnode">
+        <rect x="580" y="1175" width="200" height="62" rx="4" class="skill-rect" stroke-width="1"/>
+        <text x="680" y="1194" text-anchor="middle" font-size="9" class="skill-title">Processing loops:</text>
+        <text x="680" y="1211" text-anchor="middle" font-size="8" class="skill-sub">Func arch → ConOps</text>
+      </g>
+
+      <path d="M200 1206 L280 1206" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M520 1206 L580 1206" fill="none" class="arr-blue" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="1263" width="760" height="68" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="400" y="1287" text-anchor="middle" font-size="9" class="skill-title">ISO 26262 · SOTIF · safety analysis · perception systems · sensor HW collab · cross-fn reqs</text>
+      <text x="400" y="1305" text-anchor="middle" font-size="9" class="skill-sub">Bounding scenarios · V&amp;V plan design</text>
+      <path d="M400 1237 L400 1263" fill="none" class="arr-amber" stroke-width="0.8" marker-end="url(#arr)"/>
+
+      <rect x="20" y="1347" width="240" height="110" rx="4" class="out-rect" stroke-width="1"/>
+      <text x="140" y="1368" text-anchor="middle" font-size="9" class="out-title">Outputs ↗</text>
+      <text x="140" y="1383" text-anchor="middle" font-size="8" class="out-item">Feature system archs</text>
+      <text x="140" y="1395" text-anchor="middle" font-size="8" class="out-item">ConOps documents</text>
+      <text x="140" y="1407" text-anchor="middle" font-size="8" class="out-item">Safety analyses</text>
+      <text x="140" y="1419" text-anchor="middle" font-size="8" class="out-item">Sensor requirements</text>
+      <text x="140" y="1431" text-anchor="middle" font-size="8" class="out-item">V&amp;V plans (track+road)</text>
+      <text x="140" y="1443" text-anchor="middle" font-size="8" class="out-item">Cross-fn approvals</text>
+
+      <text x="20" y="1497" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">SKILL BUS · ACCUMULATED TECHNICAL STACK</text>
+      <line x1="20" y1="1501" x2="780" y2="1501" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M110 1331 L110 1345 L400 1345 L400 1509" fill="none" class="arr-gray" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M400 1331 L400 1345" fill="none" class="arr-gray" stroke-width="0.8"/>
+      <path d="M680 1331 L680 1345 L400 1345" fill="none" class="arr-gray" stroke-width="0.8"/>
+
+      <rect x="20" y="1509" width="240" height="95" rx="4" class="skill-rect" stroke-width="1"/>
+      <text x="130" y="1528" text-anchor="middle" font-size="9" class="skill-title">Languages &amp; tools</text>
+      <text x="130" y="1543" text-anchor="middle" font-size="8" class="skill-sub">Python · SQL · MATLAB</text>
+      <text x="130" y="1556" text-anchor="middle" font-size="8" class="skill-sub">Simulink · Linux · Git</text>
+      <text x="130" y="1569" text-anchor="middle" font-size="8" class="skill-sub">Automotive Ethernet</text>
+      <text x="130" y="1582" text-anchor="middle" font-size="8" class="skill-sub">Track/road/dyno testing</text>
+
+      <rect x="330" y="1509" width="240" height="95" rx="4" class="job-rect"/>
+      <text x="450" y="1528" text-anchor="middle" font-size="9" class="job-title">Systems engineering</text>
+      <text x="450" y="1543" text-anchor="middle" font-size="8" class="job-sub">Cyber-physical design</text>
+      <text x="450" y="1556" text-anchor="middle" font-size="8" class="job-sub">Feature &amp; functional reqs</text>
+      <text x="450" y="1569" text-anchor="middle" font-size="8" class="job-sub">Functional arch design</text>
+      <text x="450" y="1582" text-anchor="middle" font-size="8" class="job-sub">FMEA · ISO 26262</text>
+
+      <rect x="640" y="1509" width="140" height="95" rx="4" class="fdn-rect"/>
+      <text x="710" y="1528" text-anchor="middle" font-size="9" class="fdn-title">Safety analysis</text>
+      <text x="710" y="1543" text-anchor="middle" font-size="8" class="fdn-sub">STPA · STAMP</text>
+      <text x="710" y="1556" text-anchor="middle" font-size="8" class="fdn-sub">SOTIF docs</text>
+      <text x="710" y="1569" text-anchor="middle" font-size="8" class="fdn-sub">Threat modeling</text>
+      <text x="710" y="1582" text-anchor="middle" font-size="8" class="fdn-sub">Scenario def</text>
+
+      <text x="20" y="1638" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">OUTPUT BUS · SYSTEM CAPABILITIES</text>
+      <line x1="20" y1="1642" x2="780" y2="1642" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M130 1604 L130 1620 L400 1620 L400 1650" fill="none" class="arr-amber" stroke-width="0.8" marker-end="url(#arr)"/>
+      <path d="M450 1604 L450 1620" fill="none" class="arr-amber" stroke-width="0.8"/>
+      <path d="M710 1604 L710 1620 L400 1620" fill="none" class="arr-amber" stroke-width="0.8"/>
+
+      <rect x="20" y="1650" width="760" height="88" rx="4" class="out-rect" stroke-width="1"/>
+      <text x="400" y="1672" text-anchor="middle" font-size="9" class="out-title">Deployable capability set</text>
+      <text x="400" y="1689" text-anchor="middle" font-size="8" class="out-item">End-to-end feature ownership: ConOps → architecture → requirements → verification → deployment</text>
+      <text x="400" y="1703" text-anchor="middle" font-size="8" class="out-item">SOTIF / STPA safety analysis · ISO 26262 · FMEA · sensor system integration · safety case</text>
+      <text x="400" y="1717" text-anchor="middle" font-size="8" class="out-item">L4 AV V&amp;V at scale · statistical test design · cross-functional leadership · ML validation</text>
+
+      <text x="20" y="1776" font-size="8" font-weight="500" class="rule-text" letter-spacing="0.2em">NEXT STATE → CONTROL ACTION CONSULTING</text>
+      <line x1="20" y1="1780" x2="780" y2="1780" class="rule-line" stroke-width="0.5"/>
+
+      <path d="M400 1738 L400 1788" fill="none" class="arr-purple" stroke-width="1.2" stroke-dasharray="5 3" marker-end="url(#arr)"/>
+
+      <g class="dnode">
+        <rect x="200" y="1788" width="400" height="68" rx="4" class="edu-rect"/>
+        <text x="400" y="1811" text-anchor="middle" font-size="11" class="edu-title">Control Action · Independent Consulting</text>
+        <text x="400" y="1828" text-anchor="middle" font-size="9" class="edu-sub">AI/ML validation · robotics · AV · SOTIF &amp; STPA analytical frameworks</text>
+      </g>
+
+      <text x="20" y="1892" font-size="8" class="rule-text" letter-spacing="0.08em">target: ROSCon  ·  CoRL  ·  Automate  |  substack: Control Action · SOTIF/STPA lens on AI + tech</text>
+
+      <line x1="20" y1="1908" x2="780" y2="1908" class="rule-line" stroke-width="0.5"/>
+      <text x="20" y="1924" font-size="8" class="footer-text" letter-spacing="0.08em">SYSTEM STATUS: NOMINAL  ·  UPTIME: ~10 YEARS  ·  ZERO CRITICAL FAILURES  ·  SAFETY LEVEL: HIGH</text>
+      <text x="780" y="1924" text-anchor="end" font-size="8" class="footer-text" letter-spacing="0.08em">kmwolfenberger.com  ·  v2025.1</text>
+    </svg>
+  </div>
+</section>
+
+<style>
+  /* ─── DIAGRAM SECTION ─── */
+  #architecture {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .diagram-container {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diagram-container::before {
+    content: 'SYSTEM ARCHITECTURE v2025.1';
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--text3);
+  }
+
+  .diagram-container::after {
+    content: '● NOMINAL';
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+  }
+
+  .diag-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 28px;
+    padding: 0 4px;
+  }
+
+  .diag-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+  }
+
+  .diag-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  .diag-svg {
+    width: 100%;
+    display: block;
+  }
+
+  .diag-svg text {
+    font-family: 'DM Mono', monospace;
+  }
+
+  .dnode {
+    cursor: pointer;
+  }
+
+  .dnode rect,
+  .dnode ellipse {
+    transition: opacity 0.15s;
+  }
+
+  .dnode:hover rect,
+  .dnode:hover ellipse {
+    opacity: 0.82;
+  }
+</style>

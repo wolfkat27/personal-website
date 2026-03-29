@@ -1,0 +1,155 @@
+---
+---
+
+<section id="consulting">
+  <div class="section-header">
+    <span class="section-label">03</span>
+    <h2 class="section-title">Control Action</h2>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="consulting-layout">
+    <div class="consulting-copy">
+      <h2>Safety engineering for systems that have to <em>work.</em></h2>
+      <p>Control Action is an independent consulting practice applying SOTIF and STPA frameworks to AI and embodied systems — robotics, autonomous vehicles, drones, and any ML system operating in the physical world.</p>
+      <p>The practice was built on a simple premise: most ML validation programs are designed for software, not for systems that crash. The frameworks that work for AV safety cases — STAMP, STPA, SOTIF — are underutilized everywhere else. That's the gap.</p>
+      <p>Writing on the Substack applies these lenses to broader AI and tech — accessible analysis for practitioners who want to think more rigorously about the systems they build.</p>
+      <a class="substack-link" href="https://substack.com" target="_blank">Read Control Action on Substack ↗</a>
+    </div>
+
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <div class="service-text">
+          <h4>SOTIF &amp; STPA engagements</h4>
+          <p>Hazard analysis, safety case review, and SOTIF documentation for ML-driven features in autonomous platforms.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <div class="service-text">
+          <h4>V&amp;V program design</h4>
+          <p>Building verification and validation plans for new autonomous capabilities — bounding scenarios, test design, metrics, and deployment gates.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <div class="service-text">
+          <h4>Safety architecture review</h4>
+          <p>Reviewing functional architectures, requirements, and system designs against safety standards and deployment constraints.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <div class="service-text">
+          <h4>Fractional systems engineering</h4>
+          <p>Embedded support for early-stage robotics and AV teams building their first safety-engineering infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ─── CONSULTING SECTION ─── */
+  #consulting {
+    border-top: 1px solid var(--border);
+  }
+
+  .consulting-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .consulting-copy h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .consulting-copy h2 em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+
+  .consulting-copy p {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .consulting-copy .substack-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+    margin-top: 8px;
+  }
+
+  .consulting-copy .substack-link:hover {
+    border-color: var(--amber);
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-item {
+    background: var(--bg);
+    padding: 24px 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .service-item:hover {
+    background: var(--bg2);
+  }
+
+  .service-num {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    min-width: 28px;
+    padding-top: 3px;
+  }
+
+  .service-text h4 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .service-text p {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .consulting-layout {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+</style>
